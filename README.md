@@ -1,2 +1,2 @@
-# 3Wire-CMS
-CMS built with Laravel (simple)
+# 3WireCMS
+CMS built with Laravel
