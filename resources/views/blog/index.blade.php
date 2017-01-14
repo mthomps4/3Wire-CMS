@@ -1,13 +1,14 @@
 @extends('layouts.blog')
 @section('blogContent')
-  <h1> Blog Posts
+  <h1 class="pageTitle"> Blog Posts
     @if(isset($tagName))
-        <span class='filteredBy'>= Filtered By: #{{$tagName}}</span>
+        <span class='filteredBy'>- Filtered By: #{{$tagName}}</span>
     @endif
     @if(isset($categoryName))
         <span class='filteredBy'>- Filtered By: {{$categoryName}}</span>
     @endif
   </h1>
+  <hr>
 
   @foreach($posts as $post)
       <div>
@@ -16,7 +17,7 @@
       <p>
         {{$post->created_at->format('F d Y')}} -
         @foreach($post->tags as $tag)
-              <a href="#">#{!! $tag->name !!}</a>
+              <a href="/tag/{{$tag->id}}/posts/">{!! $tag->name !!}</a>
         @endforeach
       </p>
 
@@ -26,55 +27,14 @@
       </p>
 
       @foreach($post->categories as $category)
-            <a href="#">{!! $category->name !!}</a>
+            <a href="/category/{{$category->id}}/posts/">{!! $category->name !!}</a>
       @endforeach
 
       </div>
       <hr>
   @endforeach
-
 @stop
 
-
 @section('sidebar')
-  <p>
-  Tags:
-
-      @foreach($tags as $tag)
-        <a href="#" role="presentation">
-          <button class="btn btn-default" type="button">
-            #{{$tag->name}}    <span class="badge">  {{$tag->tagCount}}</span>
-          </button>
-        </a>
-      @endforeach
-   </p>
-
-<hr />
-
-<p>
-  Categories:
-  @foreach($categories as $category)
-    <a href="#" role="presentation">
-      <button class="btn btn-default" type="button">
-        #{{$category->name}}    <span class="badge">  {{$category->categoryCount}}</span>
-      </button>
-    </a>
-  @endforeach
-</p>
-<hr />
-
-    <h4>Blog Archive</h4>
-@foreach ($posts_by_date as $date => $posts)
-  <div class="btn-group">
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{$date}}<span class="caret"></span>
-      </button>
-    <ul class="dropdown-menu">
-      @foreach ($posts as $post)
-        <li><a class="dropdown-item" href="/post/{{$post->id}}">{{ $post->title }}</a></li>
-      @endforeach
-    </div>
-@endforeach
-
-
+  @include('blog.sidebar')
 @stop

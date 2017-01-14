@@ -3,7 +3,7 @@
   <h1> {{$blogpost->title}}</h1>
   <img src="{{$blogpost->imageURL}}" alt="Featured Image" class="postFeaturedImage">
   <div class="blogpostBody">
-    {{$blogpost->body}}
+    {!! html_entity_decode($blogpost->body) !!}
   </div>
   <hr>
   <div class=container>
@@ -42,55 +42,9 @@
       @endforeach
     </ul>
   </div>
-
 @stop
 
 
 @section('sidebar')
-  <p>
-  Tags:
-    <?php
-      foreach($tags as $tag)
-      {
-        echo "<a href='/tag/$tag->id/posts/'>";
-        echo "#";
-        echo $tag->name;
-        echo "</a>";
-        echo "  ";
-      }
-     ?>
-   </p>
-
-<hr />
-
-<p>
-  Categories:
-    <?php
-      foreach($categories as $category)
-      {
-        echo "<a href='/category/$category->id/posts/'>";
-        echo "#";
-        echo $category->name;
-        echo "</a>";
-        echo "  ";
-      }
-     ?>
-</p>
-<hr />
-
-
-    <h4>Blog Archive</h4>
-@foreach ($posts_by_date as $date => $posts)
-<div class="btn-group">
-    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      {{$date}}<span class="caret"></span>
-    </button>
-  <ul class="dropdown-menu">
-    @foreach ($posts as $post)
-      <li><a class="dropdown-item" href="/post/{{$post->id}}">{{ $post->title }}</a></li>
-    @endforeach
-  </div>
-@endforeach
-
-
+  @include('blog.sidebar')
 @stop
