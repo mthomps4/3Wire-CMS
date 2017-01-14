@@ -8,8 +8,7 @@ CMS Built with Laravel
 - [x] Session Variables
 - [ ] Reroutes - Auth:Routs
 - [ ] CRUD Scaffold - Admin Only
-- [ ] Post Body Edit tinymce
-- [ ] GUI for Post Entry - tinymce
+- [ ] Post Body GUI Edit tinymce -- Looking into custom options for blog post styling
 
 #### Posts Have
 - [x] Title
@@ -20,3 +19,9 @@ CMS Built with Laravel
 - [x] Comments -> GuestName - Comment
 - [x] Tags (ManyToMany)
 - [x] Categories (ManyToMany)
+
+#### Styles
+- [ ] Add Main Page Content
+- [ ] Blog Page Styles
+- [ ] Single Post Styles
+- [ ] Dashboard Styles 
