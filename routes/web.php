@@ -33,10 +33,10 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //Main Page Routes
 Route::get('/home', 'HomeController@index');
-Route::get('/about', 'aboutController@index');
+Route::get('/about', 'MainController@index');
 
 
 
 
-//404 no route found 
+//404 no route found
 Route::get('/{page}','MainController@reroute');

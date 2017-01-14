@@ -6,4 +6,49 @@
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+ul{
+  list-style: none;
+}
+a, a:hover{
+  text-decoration: none;
+}
+
+.mainNav{
+  background-color:teal;
+  height:80px;
+}
+
+.navFloat{
+  height:80px;
+  display:flex;
+  align-items: center;
+}
+
+.navHead{
+  margin-left: 3em;
+  margin-right: auto;
+  font-size:2.25em;
+}
+
+.navHead, .navList a, .navHead:visited, .navList:visited{
+  color:white;
+}
+
+.navList{
+  width:30%;
+  display:flex;
+  list-style: none;
+}
+
+.navList a{
+  margin-right: 2em;
+  font-size:1.3em;
+}
+
+footer{
+  background-color:#333;
+  margin-top:20px;
+  padding:10px;
+}
