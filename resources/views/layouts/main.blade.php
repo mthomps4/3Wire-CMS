@@ -23,7 +23,7 @@
 
             <div class="container">
               <div class="mainContent">
-                @yield('content')
+                @yield('mainContent')
               </div>
             </div>
 

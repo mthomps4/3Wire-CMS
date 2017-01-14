@@ -32,10 +32,18 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //Main Page Routes
-Route::get('/home', 'HomeController@index');
 Route::get('/about', 'MainController@index');
 
+//Blog Get Routes
+Route::get('/blog', 'blogpostController@index');
+Route::get('/post/{blogpost}', 'blogpostController@show');
+Route::get('/tag/{tag}/posts', 'tagController@getByTag');
+Route::get('/category/{category}/posts/', 'categoryController@getByCategory');
 
+//Blog Admin Routes
+Route::get('/dashboard', 'blogpostController@showDashboard')->middleware('auth');
+Route::post('/blogpost', 'blogpostController@store')->middleware('auth');;
+Route::post('/post/{blogpost}/comment', 'CommentController@store')->middleware('auth');;
 
 
 //404 no route found

@@ -2,21 +2,21 @@
 CMS Built with Laravel  
 
 ## ToDo
-#### Admin Area
-- [ ] Admin Login
-- [ ] Session Variables
-- [ ] Reroutes - Auth:Routs
 
-#### Posts
+#### Admin Area
+- [x] Admin Login
+- [x] Session Variables
+- [ ] Reroutes - Auth:Routs
 - [ ] CRUD Scaffold - Admin Only
+- [ ] Post Body Edit tinymce
 - [ ] GUI for Post Entry - tinymce
 
 #### Posts Have
-- [ ] Title
-- [ ] Post Body tinymce HTML
-- [ ] Featured Image - URL
-- [ ] Timestamps
-- [ ] Author - Default:Admin_Name
-- [ ] Comments - GuestName - Comment
-- [ ] Tags (ManyToMany)
-- [ ] Categories (ManyToMany)
+- [x] Title
+- [x] Post Body
+- [x] Featured Image -> URL String
+- [x] Timestamps
+- [x] Author Name -> Admin Name
+- [x] Comments -> GuestName - Comment
+- [x] Tags (ManyToMany)
+- [x] Categories (ManyToMany)

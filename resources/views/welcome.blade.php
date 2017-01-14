@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('content')
+@section('mainContent')
 
 <h1 class="pageTitle">3WireCMS</h1>
 <h3 class="pageHeading">HipsterIpsum</h3>
