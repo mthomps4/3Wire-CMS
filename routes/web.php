@@ -43,9 +43,11 @@ Route::get('/category/{category}/posts/', 'categoryController@getByCategory');
 //Blog Admin Routes
 Route::get('/dashboard', 'blogpostController@showDashboard')->middleware('auth');
 Route::get('/addpost', 'blogpostController@addpost')->middleware('auth');
+Route::get('/editpost/{blogpost}', 'blogpostController@editpost')->middleware('auth');
 
-Route::post('/storeNewPost', 'blogpostController@store')->middleware('auth');;
-Route::post('/post/{blogpost}/comment', 'CommentController@store')->middleware('auth');;
+Route::post('/storeNewPost', 'blogpostController@store')->middleware('auth');
+Route::post('/updatePost', 'blogpostController@update')->middleware('auth');;
+Route::post('/post/{blogpost}/comment', 'CommentController@store')->middleware('auth');
 
 
 //404 no route found

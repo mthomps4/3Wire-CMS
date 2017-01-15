@@ -1,3 +1,5 @@
+@include('blog.sidebarFunctions');
+
 <hr />
 <div class="sidebarMobileFlex">
 <div>
@@ -17,26 +19,40 @@
 </div>
 
 <div>
-    <h4>Tags:</h4>
-      @foreach($tags as $tag)
+  <h4>Tags:</h4>
+    <?php
+      $tagList = getTags()
+    ?>
+
+    @foreach($tagList as $list)
+      @foreach($list as $tag)
         <a href="/tag/{{$tag->id}}/posts/" role="presentation">
-          <button class="btn btn-default  btn-sm" type="button">
-            {{$tag->name}}   <span class="counterLabel"> ( {{$tag->tagCount}} ) </span>
-          </button>
+        <button class="btn btn-default  btn-sm" type="button">
+        {{$tag->name}}   <span class="counterLabel"> ( {{getTagCount($tag->id)}}) </span>
+        </button>
         </a>
       @endforeach
+    @endforeach
+
     <hr />
 </div>
 
 <div>
-<h4> Categories: </h4>
-    @foreach($categories as $category)
-      <a href="/category/{{$category->id}}/posts/" role="presentation">
-        <button class="btn btn-default btn-sm btn" type="button">
-          {{$category->name}}   <span class="counterLabel">( {{$category->categoryCount}} )</span>
+  <h4>Categories:</h4>
+    <?php
+      $catList = getCategories()
+    ?>
+    @foreach($catList as $list)
+      @foreach($list as $cat)
+        <a href="/tag/{{$cat->id}}/posts/" role="presentation">
+        <button class="btn btn-default  btn-sm" type="button">
+        {{$cat->name}}   <span class="counterLabel"> ( {{getCatCount($cat->id)}}) </span>
         </button>
-      </a>
+        </a>
+      @endforeach
     @endforeach
+
+    <hr />
 </div>
 
 </div>

@@ -14,13 +14,20 @@
       <div class="blogpostWrap">
       <img src="{{$post->imageURL}}" alt="Featured Image" class="postFeaturedImage">
       <div class="blogDescWrap">
-            <h1> {{$post->title}}</h1>
+        <div>
+            <h1> <a href="/post/{{$post->id}}">{{$post->title}} </a></h1>
 
             <p>
               {{str_limit($post->body, 80)}}<br />
               <a href="/post/{{$post->id}}">Read More ...</a>
             </p>
 
+            <p class="blogDescDate">
+              {{$post->created_at->format('F d Y')}}<br />
+              By: {{$post->author}}
+            </p>
+
+          </div>
             @foreach($post->categories as $category)
               <a href="/category/{{$category->id}}/posts/"><span class="badge catBadge">{!! $category->name !!}</span></a>
             @endforeach
@@ -30,9 +37,6 @@
             @foreach($post->tags as $tag)
               <a href="/tag/{{$tag->id}}/posts/"><span class="badge tagBadge">#{!! $tag->name !!}</span></a>
             @endforeach
-
-            <p class="blogDescDate">{{$post->created_at->format('F d Y')}}</p>
-            <p class="blogDescAuth">By: {{$post->author}} -- </p>
       </div>
 
       </div>

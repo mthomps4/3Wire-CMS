@@ -24,8 +24,8 @@ class CreateTagsTable extends Migration
         $table->integer('blogpost_id')->unsigned()->index();
         $table->integer('tag_id')->unsigned()->index();
 
-        $table->foreign('blogpost_id')->references('id')->on('blogposts')->onDelete('cascade');
-        $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+        //$table->foreign('blogpost_id')->references('id')->on('blogposts')->onDelete('cascade');
+        //$table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 
         $table->timestamps();
       });
