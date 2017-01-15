@@ -1,19 +1,62 @@
 @extends('layouts.main')
 @section('mainContent')
 
-<h1 class="pageTitle">3WireCMS</h1>
-<h3 class="pageHeading">HipsterIpsum</h3>
-<p><a href="https://hipsum.co/">Need some Filler Text? Check Out Hipster Ipsum Here!</a></p>
-<p>Paleo celiac meh godard, hammock gastropub XOXO ramps. Yuccie scenester biodiesel single-origin coffee affogato. XOXO pop-up bitters disrupt, iPhone leggings hexagon keytar before they sold out kogi austin waistcoat aesthetic live-edge. Fanny pack raw denim forage, locavore flexitarian gastropub ugh blue bottle disrupt affogato tbh stumptown raclette neutra retro. Cardigan tousled authentic, coloring book kickstarter activated charcoal distillery franzen craft beer forage knausgaard pinterest. Blue bottle normcore umami vaporware bitters. Bitters VHS pork belly mixtape forage hell of pinterest tousled, polaroid fanny pack roof party craft beer.</p>
+<h1 class="pageTitle">
+  3WireCMS
+  <br /><span class='filteredBy'> A Blogging CMS built with Laravel </span>
+</h1>
 
-<p>Kombucha poke mumblecore, cred gluten-free banjo everyday carry. Plaid DIY stumptown paleo cliche man bun trust fund affogato chia, yuccie intelligentsia food truck direct trade fanny pack ethical. Fam gluten-free air plant drinking vinegar, XOXO tote bag edison bulb normcore neutra hammock. Banh mi fanny pack small batch literally. Pabst gentrify hammock, thundercats etsy scenester letterpress ramps freegan vexillologist brunch schlitz subway tile messenger bag hashtag. Truffaut succulents umami, vexillologist shoreditch pinterest aesthetic street art blog cred. Umami pabst aesthetic ethical wayfarers 90's.</p>
+<img class="homeImage" src="https://github.com/mthomps4/3WireCMS/blob/master/codesnips/3WireCMS-BlogPost.PNG?raw=true" alt="Blog Post Image">
+<div>
+<h4 class="homeSubTitle">Post Content</h4>
+<p>Blog Posts include by default a Title, Featured Image, Author, and a Post Body. The Post Body is setup to receive HTML via decoding allowing for more images, giphy fun, and any custom styles you wish to add directly.Moving forward the Post Body will be setup via GUI control, and a Image Uploader for Featured Image.</p>
+</div>
 
-<p>Actually deep v typewriter, plaid before they sold out celiac vice af VHS coloring book tbh. Live-edge put a bird on it kickstarter, narwhal ennui master cleanse bespoke tote bag viral schlitz. Schlitz ugh photo booth crucifix small batch before they sold out whatever deep v. Umami bushwick bitters hashtag woke. Street art raw denim occupy pickled art party enamel pin. Selvage gluten-free wolf artisan ennui etsy. Kickstarter microdosing hella, unicorn health goth cardigan aesthetic intelligentsia.</p>
+<div >
+<h4 class="homeSubTitle">Comments</h4>
+<p>Comments are open and added as "Guests". Each comment simply asks for a name and comment. Moving forward I will look to add a "guest" login via other providers for quick name and avatar image access.</p>
+</div>
 
-<p>Hella venmo +1, tote bag vape single-origin coffee umami stumptown literally marfa pickled vinyl tumblr. Polaroid yr lumbersexual cardigan mlkshk crucifix truffaut intelligentsia chia. Copper mug knausgaard kale chips deep v glossier kinfolk master cleanse, pinterest sustainable you probably haven't heard of them vaporware leggings four dollar toast pork belly street art. Twee yr meh, small batch scenester shoreditch hell of 8-bit raclette readymade mumblecore. Godard tousled tattooed austin, ennui actually church-key thundercats blog everyday carry mlkshk banh mi. Echo park biodiesel whatever meh, messenger bag affogato cred. Ramps helvetica try-hard authentic, sriracha pug franzen gentrify deep v umami asymmetrical godard.</p>
+<div>
+<h4 class="homeSubTitle">Dashboard</h4>
+<p>The Admin user is meant to be setup manually. If running locally there is a "Dummy Admin" supplied for testing. The dashboard is setup as a simple hub with Date Functions supplying the Edit and Delete buttons dynamically. Moving forward I will add more filters and ways to search for the blog post in question. (Title, Date Range, Tags, Categories, etc)</p>
+</div>
 
-<p>Vegan cronut pop-up PBR&B bitters, lumbersexual artisan pour-over portland authentic. Roof party gluten-free wolf cronut pitchfork cliche, kickstarter literally iPhone yr lumbersexual kinfolk. Gluten-free hella put a bird on it vaporware. Knausgaard godard helvetica, subway tile chicharrones mlkshk freegan asymmetrical pitchfork craft beer pork belly everyday carry iPhone retro wayfarers. Air plant pop-up succulents, umami bitters actually raclette selfies jean shorts poutine. Beard glossier mixtape twee hammock, tumblr distillery pour-over synth. Food truck chicharrones aesthetic pug ugh, tumeric bespoke authentic pork belly man bun vaporware.</p>
+  <img class="homeImage" src="https://github.com/mthomps4/3WireCMS/blob/master/codesnips/3WireCMS-dashboard.PNG?raw=true" alt="Dashboard Image">
 
-<p>Pop-up selfies freegan tousled, tofu XOXO tilde subway tile lo-fi meditation synth meggings af hashtag lumbersexual. Poke umami master cleanse cold-pressed. Schlitz you probably haven't heard of them locavore bitters. Gochujang chambray iceland cornhole chartreuse occupy. Chicharrones retro try-hard kombucha wayfarers tattooed cronut, twee normcore microdosing shoreditch green juice unicorn. Blue bottle tattooed hoodie salvia, pork belly vice XOXO tote bag stumptown tumblr polaroid mlkshk subway tile quinoa drinking vinegar. Beard try-hard migas organic poutine, wolf chicharrones hoodie hashtag vinyl cray everyday carry microdosing.</p>
+
+
+{{-- _____
+### ToDo
+
+#### Next Steps
+- [ ] GUI Control For Posts
+- [ ] Drag and Drop Image Uploader
+- [ ] Testing for unknowns/oversights
+- [ ] More Dashboard filters added
+- [ ] Avatar Guest SignIn
+
+#### Admin Area
+- [x] Admin Login
+- [x] Session Variables
+- [x] Reroutes - Auth:Routs
+- [x] CRUD Scaffold - Admin Only
+- [ ] Post Body GUI Edit tinymce (Looking into custom options for blog post styling)
+
+#### Posts Have
+- [x] Title
+- [x] Post Body
+- [x] Featured Image -> URL String
+- [x] Timestamps
+- [x] Author Name -> Admin Name
+- [x] Comments -> GuestName - Comment
+- [x] Tags (ManyToMany)
+- [x] Categories (ManyToMany)
+
+#### Styles - Prototype Styles
+- [x] Add Main Page Content
+- [x] Blog Page Styles
+- [x] Single Post Styles
+- [x] Dashboard Styles --}}
 
 @stop

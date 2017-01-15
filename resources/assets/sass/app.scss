@@ -62,6 +62,19 @@ footer{
   text-align: center;
 }
 
+.homeImage{
+    margin:0 auto;
+    display:flex;
+    width:70%;
+    margin-bottom:40px;
+    margin-top:40px;
+    border:2px solid #ccc;
+}
+
+.homeSubTitle{
+  font-size:2em;
+}
+
 //SideBar
 .sidebarContent{
   text-align: right;
