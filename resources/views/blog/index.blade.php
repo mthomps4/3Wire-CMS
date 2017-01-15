@@ -2,33 +2,38 @@
 @section('blogContent')
   <h1 class="pageTitle"> Blog Posts
     @if(isset($tagName))
-        <span class='filteredBy'>- Filtered By: #{{$tagName}}</span>
+      <br /><span class='filteredBy'>Filtered By: #{{$tagName}}</span>
     @endif
     @if(isset($categoryName))
-        <span class='filteredBy'>- Filtered By: {{$categoryName}}</span>
+      <br /><span class='filteredBy'>Filtered By: {{$categoryName}}</span>
     @endif
   </h1>
   <hr>
 
   @foreach($posts as $post)
-      <div>
+      <div class="blogpostWrap">
       <img src="{{$post->imageURL}}" alt="Featured Image" class="postFeaturedImage">
-      <h1> {{$post->title}}</h1>
-      <p>
-        {{$post->created_at->format('F d Y')}} -
-        @foreach($post->tags as $tag)
-              <a href="/tag/{{$tag->id}}/posts/">{!! $tag->name !!}</a>
-        @endforeach
-      </p>
+      <div class="blogDescWrap">
+            <h1> {{$post->title}}</h1>
 
-      <p>
-        {{str_limit($post->body, 80)}}
-        <a href="/post/{{$post->id}}">Read More ...</a>
-      </p>
+            <p>
+              {{str_limit($post->body, 80)}}<br />
+              <a href="/post/{{$post->id}}">Read More ...</a>
+            </p>
 
-      @foreach($post->categories as $category)
-            <a href="/category/{{$category->id}}/posts/">{!! $category->name !!}</a>
-      @endforeach
+            @foreach($post->categories as $category)
+              <a href="/category/{{$category->id}}/posts/"><span class="badge catBadge">{!! $category->name !!}</span></a>
+            @endforeach
+
+            <br>
+
+            @foreach($post->tags as $tag)
+              <a href="/tag/{{$tag->id}}/posts/"><span class="badge tagBadge">#{!! $tag->name !!}</span></a>
+            @endforeach
+
+            <p class="blogDescDate">{{$post->created_at->format('F d Y')}}</p>
+            <p class="blogDescAuth">By: {{$post->author}} -- </p>
+      </div>
 
       </div>
       <hr>

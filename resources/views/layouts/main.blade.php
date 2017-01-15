@@ -1,3 +1,11 @@
+<?php
+function isActiveRoute($route, $output = "active")
+{
+    if (Route::currentRouteName() == $route) return $output;
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +19,7 @@
 <div class="contentWrapper">
 
 
-          <nav class="navbar navbar-default">
+          <nav class="navbar navbar-inverse navbar-custom">
             <div class="container">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
@@ -27,24 +35,12 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/blog">Blog</a></li>
+                  <li class="{{ Request::path() == 'about' ? 'active' : '' }}"><a href="/about">About</a></li>
+                  <li class="{{ Request::path() == 'blog' ? 'active' : '' }}"><a href="/blog">Blog</a></li>
                 </ul>
               </div><!-- /.navbar-collapse -->
          </div><!-- /.container-fluid -->
        </nav>
-
-          {{-- <nav class="mainNav">
-            <div class="navFloat">
-                <a class="navHead" href="/">3WireCMS</a>
-                <ul id="mobileNavList" class="navList">
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/blog">Blog</a></li>
-                </ul>
-              </div>
-          </nav> --}}
-
-
 
             <div class="container">
               <div class="mainContent">
@@ -55,7 +51,7 @@
           </div>
   <footer>
     <div class="container">
-      <p>Footer Text </p>
+      <p>Matthew Thompson | 3WireBuild | {{date('Y')}}</p>
     </div>
   </footer>
 
