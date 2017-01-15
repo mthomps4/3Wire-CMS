@@ -44,7 +44,7 @@
     ?>
     @foreach($catList as $list)
       @foreach($list as $cat)
-        <a href="/tag/{{$cat->id}}/posts/" role="presentation">
+        <a href="/category/{{$cat->id}}/posts/" role="presentation">
         <button class="btn btn-default  btn-sm" type="button">
         {{$cat->name}}   <span class="counterLabel"> ( {{getCatCount($cat->id)}}) </span>
         </button>

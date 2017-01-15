@@ -37,12 +37,15 @@
 
   <hr>
   <h3>Comments</h3>
-    <ul>
-      @foreach ($blogpost->comments as $comment)
+    <ul class="commentFlex">
+      @foreach ($blogpost->comments->reverse() as $comment)
         <li class="comment">
           <p><b>{{$comment->user_name}}: </b>
           {{$comment->body}}
           </p>
+        </li>
+        <li class="commentDate">
+          {{$comment->created_at->format('M d')}}
         </li>
       @endforeach
     </ul>

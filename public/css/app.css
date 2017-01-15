@@ -7753,6 +7753,18 @@ footer {
   text-align: right;
 }
 
+@media (max-width: 991px) {
+  .sidebarMobileFlex {
+    display: -webkit-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .sidebarContent {
+    text-align: center;
+  }
+}
+
 .btn-Archive {
   background-color: teal !important;
   border: none;
@@ -7796,17 +7808,12 @@ footer {
   margin-left: 3em;
 }
 
-.catBadge {
-  background-color: teal !important;
+.catBadge, .tagBadge {
   padding: 5px 10px !important;
 }
 
 .catBadge:hover {
-  background-color: #006464 !important;
-}
-
-.tagBadge {
-  padding: 5px 10px !important;
+  background-color: #428bca !important;
 }
 
 .tagBadge:hover {
@@ -7837,6 +7844,71 @@ footer {
 .commentContainer {
   width: 90%;
   margin: 0 auto;
+}
+
+.commentFlex {
+  display: -webkit-box;
+  display: flex;
+}
+
+.comment {
+  border-right: solid 1px #ccc;
+  padding-right: 10px;
+}
+
+.commentDate {
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin-left: 10px;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: white !important;
+  background-color: #006464 !important;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  color: white !important;
+  background-color: teal !important;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: teal !important;
+}
+
+.dashContainer {
+  display: -webkit-box;
+  display: flex;
+  background-color: #333;
+  border-radius: 20px;
+  border: solid 6px #666;
+  padding: 20px;
+  color: #eee;
+}
+
+@media (max-width: 675px) {
+  .dashContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+  .dashCard {
+    margin-bottom: 2em;
+  }
+}
+
+.dashCard {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.customDefault {
+  background-color: #eee !important;
+}
+
+.customDefault li a:hover {
+  background-color: #ccc !important;
 }
 
 /*# sourceMappingURL=app.css.map */

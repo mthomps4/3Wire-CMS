@@ -67,11 +67,17 @@ footer{
   text-align: right;
 }
 
-.sidebarMobileFlex{
-  //MEDIA QUERIE REMOVE TEXT RIGHT in SideCOntent
-  // display:flex;
-  // width:100%;
-  // justify-content: space-around;
+@media (max-width: 991px )
+{
+  .sidebarMobileFlex{
+    display:flex;
+    width:100%;
+    justify-content: space-around;
+  }
+
+  .sidebarContent{
+    text-align: center;
+  }
 }
 
 .btn-Archive{
@@ -117,17 +123,12 @@ footer{
   margin-left: 3em;
 }
 
-.catBadge{
-  background-color:teal!important;
+.catBadge, .tagBadge{
   padding:5px 10px !important;
 }
 
 .catBadge:hover{
-  background-color: rgb(0,100,100)!important;
-}
-
-.tagBadge{
-  padding:5px 10px !important;
+  background-color:#428bca!important;
 }
 
 .tagBadge:hover{
@@ -159,4 +160,65 @@ footer{
 .commentContainer{
   width:90%;
   margin:0 auto;
+}
+
+.commentFlex{
+  display:flex;
+}
+
+.comment{
+  border-right:solid 1px #ccc;
+  padding-right: 10px;
+}
+
+.commentDate{
+  align-self: center;
+  margin-left:10px;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  color:white!important;
+  background-color: rgb(0,100,100)!important;
+}
+
+.navbar-nav > li > .dropdown-menu{
+  color:white!important;
+  background-color: teal!important;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+  background-color:teal!important;
+}
+
+.dashContainer{
+  display:flex;
+  background-color: #333;
+  border-radius:20px;
+  border: solid 6px #666;
+  padding:20px;
+  color:#eee;
+}
+
+@media(max-width:675px)
+{
+  .dashContainer{
+    flex-direction: column;
+  }
+
+  .dashCard{
+    margin-bottom:2em;
+  }
+}
+
+.dashCard{
+  flex-grow:1;
+  text-align: center;
+}
+
+.customDefault{
+  background-color: #eee!important;
+}
+
+.customDefault li a:hover{
+  background-color:#ccc!important;
 }

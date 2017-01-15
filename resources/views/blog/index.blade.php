@@ -29,13 +29,13 @@
 
           </div>
             @foreach($post->categories as $category)
-              <a href="/category/{{$category->id}}/posts/"><span class="badge catBadge">{!! $category->name !!}</span></a>
+              <a href="/category/{{$category->id}}/posts/"><span class="label label-info catBadge">{!! $category->name !!}</span></a>
             @endforeach
 
-            <br>
+            <br />
 
             @foreach($post->tags as $tag)
-              <a href="/tag/{{$tag->id}}/posts/"><span class="badge tagBadge">#{!! $tag->name !!}</span></a>
+              <a href="/tag/{{$tag->id}}/posts/"><span class="label label-default tagBadge">#{!! $tag->name !!}</span></a>
             @endforeach
       </div>
 

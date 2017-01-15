@@ -51,7 +51,7 @@ function getCategories(){
   $CatIds = array_unique($catIdList);
 
   foreach($CatIds as $CatId){
-      $cat = DB::table('tags')->where('id', $CatId)->get();
+      $cat = DB::table('categories')->where('id', $CatId)->get();
       array_push($newCatList, $cat);
   }
    return $newCatList;

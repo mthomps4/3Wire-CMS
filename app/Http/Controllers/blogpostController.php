@@ -49,7 +49,14 @@ class blogpostController extends Controller
     public function showDashboard()
     {
       $blogposts = Blogpost::orderBy('created_at')->get();
-      return view('blog.admin.dashboard', compact('blogposts'));
+      $tags = Tag::All();
+      $categories = Category::All();
+      $postsByDate = Blogpost::orderBy('created_at')->get();
+
+      $posts_by_date = Blogpost::all()->groupBy(function($date) {
+        return $date->created_at->format('F-Y');
+      });
+      return view('blog.admin.dashboard', compact('blogposts', 'tags', 'categories', 'postsByDate', 'posts_by_date'));
     }
 
     public function addpost()
@@ -164,6 +171,44 @@ class blogpostController extends Controller
       }
       $blogpost->categories()->sync($catIds);
 
+      return redirect('/dashboard');
+    }
+
+    public function deletepost(Blogpost $blogpost)
+    {
+      return view('blog.admin.delete', compact('blogpost'));
+    }
+
+    public function consumePostInFire(Request $request)
+    {
+      $id = $request->blogpostID;
+      $thisPost = Blogpost::find($id);
+
+      $TagPull = $thisPost->tags;
+      foreach($TagPull as $key => $value){
+          $thisTag = Tag::find($value->id);
+          $thisTag->tagCount = ($thisTag->tagCount - 1);
+          if($thisTag->tagCount == 0){
+            $thisTag->delete();
+            break;
+          }else{
+            $thisTag->save();
+          }
+      }
+
+      $CatPull = $thisPost->categories;
+      foreach($CatPull as $key => $value){
+          $thisCat = Category::find($value->id);
+          $thisCat->categoryCount = ($thisCat->categoryCount - 1);
+          if($thisCat->categoryCount == 0){
+            $thisCat->delete();
+            break;
+          }else{
+            $thisCat->save();
+          }
+      }
+
+      $thisPost->delete();
       return redirect('/dashboard');
     }
 
